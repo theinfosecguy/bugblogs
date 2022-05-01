@@ -3,7 +3,6 @@ import Footer from './Footer';
 import Image from 'next/image';
 
 export default function Layout({ children }) {
-  const test = true;
   return (
     <div className='dark-bg flex flex-col min-h-screen'>
       <header className='dark-bg mb-8 py-4 pl-4'>

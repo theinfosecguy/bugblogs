@@ -1,9 +1,8 @@
 import fs from 'fs';
 import matter from 'gray-matter';
-import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Home({ posts }) {
+export default function Home() {
   return (
     <section className="min-h-screen text-white dark-bg">
       <div className="max-w-screen-xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex">
@@ -25,7 +24,7 @@ export default function Home({ posts }) {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <Link href="/posts">
+            <Link href="/posts" passHref>
               <button className="font-semibold py-2 px-4 border rounded shadow">
           Get Started
               </button>
