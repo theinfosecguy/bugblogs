@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-import {AiFillTwitterCircle, AiFillGithub, AiFillMail} from "react-icons/ai"
+import React from "react";
+import Link from "next/link";
+import { AiFillTwitterCircle, AiFillGithub, AiFillMail } from "react-icons/ai";
 
 function Footer() {
   return (
@@ -10,7 +10,7 @@ function Footer() {
           <div className="flex justify-center space-x-6">
             <a
               className="text-white-500 hover:text-opacity-75"
-              href="/twitter"
+              href="https://twitter.com/bugblogs"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"
@@ -20,7 +20,7 @@ function Footer() {
 
             <a
               className="text-white-900 hover:text-opacity-75"
-              href="/github"
+              href="https://github.com/theinfosecguy/bugblogs"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -30,7 +30,7 @@ function Footer() {
 
             <a
               className="text-white-600 hover:text-opacity-75"
-              href="/dribbble"
+              href="mailto:support@bugblogs.tech"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Dribbble"
@@ -39,62 +39,65 @@ function Footer() {
             </a>
           </div>
 
-          <nav
-            className="relative flex flex-wrap justify-center gap-8 p-8 text-sm font-bold border-4 border-white rounded-xl"
-          >
+          <nav className="relative flex flex-wrap justify-center gap-8 p-8 text-sm font-bold border-2 border-white rounded-xl">
             <Link
               className="hover:opacity-75"
               href="/"
               target="_blank"
               rel="noopener noreferrer"
             >
-                Home
+              Home
             </Link>
 
             <Link
               className="hover:opacity-75"
-              href="user"
+              href="/sponsor"
               target="_blank"
               rel="noopener noreferrer"
             >
-                Sponsor
+              Sponsor
             </Link>
 
             <Link
               className="hover:opacity-75"
-              href="/blog"
+              href="/authors"
               target="_blank"
               rel="noopener noreferrer"
             >
-                    Authors
+              Authors
             </Link>
 
             <Link
               className="hover:opacity-75"
-              href="/portfolio"
+              href="/contribute"
               target="_blank"
               rel="noopener noreferrer"
             >
-                    Contribute
+              Contribute
             </Link>
           </nav>
 
           <p className="max-w-lg mx-auto text-xs text-gray-500">
-                BugBlogs is an Open-Source blog project that aims to help security researchers learn, explore and hack.
-                It is maintained by a group of developers who are passionate about security. If you have any questions,
-                please contact us at 
-            <a href="mailto:support@bugblogs.tech" className="text-white-500 hover:text-opacity-75">
-                    our support email address.
+            BugBlogs is an Open-Source blog project that aims to help security
+            researchers learn, explore and hack. It is maintained by a group of
+            developers who are passionate about security. If you have any
+            questions, please contact us at
+            <a
+              href="mailto:support@bugblogs.tech"
+              className="text-white-500 hover:text-opacity-75"
+            >
+              our support email address.
             </a>
-            <br/>
+            <br />
           </p>
           <p className="text-xs font-medium">
-                © {new Date().getFullYear()} | By <Link href="https://github.com/theinfosecguy">theinfosecguy</Link>
+            © {new Date().getFullYear()} | By{" "}
+            <Link href="https://github.com/theinfosecguy">theinfosecguy</Link>
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

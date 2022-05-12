@@ -22,11 +22,6 @@ const securityHeaders = [
     value: "enforce, max-age=86400",
   },
   {
-    key: "Content-Security-Policy",
-    value:
-      "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data:; font-src 'self' data:;",
-  },
-  {
     key: "Strict-Transport-Security",
     value: "max-age=31536000; includeSubDomains; preload",
   },
@@ -41,6 +36,14 @@ const nextConfig = {
         headers: securityHeaders,
       },
     ];
+  },
+  images: {
+    domains: [
+      "og.bugblogs.tech",
+      "nextjs.org",
+      "tenor.com",
+      "og-image-i3gxbp1u9-not-so-great-team.vercel.app",
+    ],
   },
 };
 
