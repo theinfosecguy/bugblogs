@@ -8,9 +8,9 @@ function Navbar() {
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" className="flex items-center">
           <img
-            src="/logoBB.svg"
+            src="https://ucarecdn.com/b9c1f9fc-60cb-477a-86d4-0f191f9aed1b/"
             className="mr-3 h-6 sm:h-9"
-            alt="Flowbite Logo"
+            alt="BugBlogo Logo"
           />
         </a>
         <div className="flex md:order-2">

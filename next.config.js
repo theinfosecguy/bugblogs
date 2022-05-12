@@ -42,6 +42,7 @@ const nextConfig = {
       "og.bugblogs.tech",
       "nextjs.org",
       "tenor.com",
+      "ucarecdn.com",
       "og-image-i3gxbp1u9-not-so-great-team.vercel.app",
     ],
   },
