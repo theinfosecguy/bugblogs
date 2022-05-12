@@ -19,7 +19,7 @@ export default function Home({ posts }) {
             key={index}
             className="border border-gray-700 m-4 rounded-xl shadow-lg overflow-hidden"
           >
-            <Link href={`/post/${slug}`}>
+            <a href={`/post/${slug}`}>
               <a>
                 <Image
                   width={650}
@@ -28,7 +28,7 @@ export default function Home({ posts }) {
                   src={getImageURL(frontmatter?.title, frontmatter?.Author)}
                 />
               </a>
-            </Link>
+            </a>
           </div>
         ))}
       </div>

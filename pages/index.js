@@ -21,7 +21,7 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <Link
+              <a
                 className="hover:bg-gradient-to-r from-blue-500 to-purple-600 btn-home rounded-2xl relative inline-flex items-center px-8 py-3 overflow-hidden text-white group border border-blue-500 hover:border-transparent"
                 href="/posts"
               >
@@ -45,7 +45,7 @@ export default function Home() {
                 <span className="text-md font-medium transition-all group-hover:mr-4">
                   Start Learning
                 </span>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

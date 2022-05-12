@@ -40,41 +40,41 @@ function Footer() {
           </div>
 
           <nav className="relative flex flex-wrap justify-center gap-8 p-8 text-sm font-bold border-2 border-white rounded-xl">
-            <Link
+            <a
               className="hover:opacity-75"
               href="/"
               target="_blank"
               rel="noopener noreferrer"
             >
               Home
-            </Link>
+            </a>
 
-            <Link
+            <a
               className="hover:opacity-75"
               href="/sponsor"
               target="_blank"
               rel="noopener noreferrer"
             >
               Sponsor
-            </Link>
+            </a>
 
-            <Link
+            <a
               className="hover:opacity-75"
               href="/authors"
               target="_blank"
               rel="noopener noreferrer"
             >
               Authors
-            </Link>
+            </a>
 
-            <Link
+            <a
               className="hover:opacity-75"
               href="/contribute"
               target="_blank"
               rel="noopener noreferrer"
             >
               Contribute
-            </Link>
+            </a>
           </nav>
 
           <p className="max-w-lg mx-auto text-xs text-gray-500">
@@ -92,7 +92,7 @@ function Footer() {
           </p>
           <p className="text-xs font-medium">
             © {new Date().getFullYear()} | By{" "}
-            <Link href="https://github.com/theinfosecguy">theinfosecguy</Link>
+            <a href="https://github.com/theinfosecguy">theinfosecguy</a>
           </p>
         </div>
       </div>
