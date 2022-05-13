@@ -16,6 +16,8 @@ lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl ege
 
 # <center> Custom React Accordion for ReactJS & NextJS </center>
 
+<sup>238</sup>U is <b>Uranium</b>
+
 🚀 A Complete Custom Accordion for ReactJS &amp; NextJS 🚀
 
 ## Live Demo

@@ -5,6 +5,8 @@ import Head from "next/head";
 import ReactMarkdown from "react-markdown";
 import { AiFillTags } from "react-icons/ai";
 import remarkGfm from "remark-gfm";
+import GradientBlock from "../../components/Adblocks/GradientBlock";
+import rehypeRaw from "rehype-raw";
 
 export default function PostPage({ frontmatter, content }) {
   // const getImageURL = (title, author = "Anonymous") => {
@@ -62,28 +64,23 @@ export default function PostPage({ frontmatter, content }) {
         <ReactMarkdown
           components={{
             code: ({ node, ...props }) => (
-              console.log(node),
-              (
-                <code
-                  style={{ color: "white" }}
-                  {...props}
-                  className="language-const"
-                />
-              )
+              <code
+                style={{ color: "white" }}
+                {...props}
+                className="language-const"
+              />
             ),
           }}
           remarkPlugins={[remarkGfm]}
         >
           {content}
         </ReactMarkdown>
+
+        <GradientBlock />
       </div>
     </Layout>
   );
 }
-
-// const CodeBlock = ({ value }) => {
-//   return <p>{value}</p>;
-// };
 
 export async function getStaticProps({ params }) {
   const fileName = `posts/${params.slug}.md`;

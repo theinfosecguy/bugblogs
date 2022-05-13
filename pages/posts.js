@@ -19,6 +19,7 @@ export default function Home({ posts }) {
             <a
               className="relative block bg-black group mx-4 mb-12 h-[260px] rounded-xl"
               href={`/post/${slug}`}
+              key={index}
             >
               <img
                 className="rounded-xl absolute inset-0 object-cover w-full h-full transition-opacity opacity-75  group-hover:opacity-50"
