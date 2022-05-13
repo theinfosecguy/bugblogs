@@ -1,5 +1,5 @@
 {
-  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "extends": ["next", "prettier"],
   "rules": {
     "indent": ["error", 2],
     "@next/next/no-html-link-for-pages": "off",

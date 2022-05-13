@@ -10,6 +10,7 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 import Head from "next/head";
+import Script from "next/script";
 
 function AuthorDetails({ author, filteredPosts }) {
   const grad = {
@@ -60,7 +61,7 @@ function AuthorDetails({ author, filteredPosts }) {
         />
         <div className="author-details mt-24 text-center w-full flex flex-col items-center">
           <h1 className="text-4xl font-bold text-white">
-            👋 Hey! I'm {author?.name || "Unknown"}
+            👋 Hey! I&apos;m {author?.name || "Unknown"}
           </h1>
           <p className="text-gray-200 text-md mt-12 xl:text-lg lg:text-xl xl:w-3/4 lg:w-[85vw] sm:w-[95vw]">
             {author.description}
