@@ -11,7 +11,7 @@ export default function Home({ posts }) {
   return (
     <>
       <Layout>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 p-8 md:p-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:p-2 w-full xl:grid-cols-3">
           {posts.map(({ slug, frontmatter }, index) => (
             <a
               className="relative block bg-black group mx-4 mb-12 h-[260px] rounded-xl"
