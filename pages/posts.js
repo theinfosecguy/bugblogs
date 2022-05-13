@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import Image from "next/image";
 import Link from "next/link";
+import { findAuthor } from "../authors/_helper";
 import Layout from "../components/Layout";
 
 export default function Home({ posts }) {
@@ -32,14 +33,10 @@ export default function Home({ posts }) {
                 </p>
 
                 <p className="text-lg font-bold text-white">
-                  {frontmatter?.Author}
+                  {frontmatter.AuthorId
+                    ? findAuthor(frontmatter.AuthorId)?.name || "Anonymous"
+                    : "Anonymous"}
                 </p>
-
-                {/* <div className="mt-64">
-                  <div className="transition-all transform translate-y-8 opacity-0  group-hover:opacity-100 group-hover:translate-y-0">
-                    <p className="text-sm text-white">{frontmatter?.description}</p>
-                  </div>
-                </div> */}
               </div>
             </a>
           ))}

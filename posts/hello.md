@@ -2,7 +2,7 @@
 title: "How to Get Started With Bug Bounty"
 metaTitle: "Next.js page options and how they work"
 metaDesc: "lorem ipsum dolor sit amet, consectetur adipiscing elit."
-Author: Keshav Malik
+AuthorId: "1"
 Date: "2020-05-01"
 tags:
   - nextjs, tutorial, beginner
