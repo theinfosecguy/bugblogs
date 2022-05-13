@@ -29,12 +29,14 @@ export default function PostPage({ frontmatter, content }) {
         <span className="text-white font-bold text-jumbo">
           {frontmatter.title}
         </span>
-        {/* Add Line Break */}
         <br />
         <p className="mt-8 text-gray-500 text-xl">
           By{" "}
           {frontmatter.AuthorId ? (
-            <a href={`/authors/${frontmatter.AuthorId}`}>
+            <a
+              href={`/authors/${frontmatter.AuthorId}`}
+              style={{ color: "pink" }}
+            >
               {findAuthor(frontmatter.AuthorId).name}
             </a>
           ) : (

@@ -24,6 +24,11 @@
   color: hsl(0, 0%, 100%);
 }
 
+.dark-bg-custom {
+  background-color: hsl(250deg 21% 19%);
+  color: white;
+}
+
 .font-bold {
   font-weight: 700;
 }
