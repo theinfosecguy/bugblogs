@@ -1,15 +1,11 @@
 import fs from "fs";
 import matter from "gray-matter";
-import Image from "next/image";
-import Link from "next/link";
 import { findAuthor } from "../authors/_helper";
 import Layout from "../components/Layout";
 
 export default function Home({ posts }) {
   const getImageURL = (title) => {
-    // const apiURL = "https://og.bugblogs.tech/api/image";
-    // return `${apiURL}?fileType=png&layoutName=Blog&Theme=Dark&Title=${title}&Author=${author}`;
-    return `https://og-image-i3gxbp1u9-not-so-great-team.vercel.app/${title}.png?theme=dark&md=1&fontSize=75px&images=https%3A%2F%2Fucarecdn.com%2Fcdc7a226-83a7-434d-95b6-66c93d276c24%2F`;
+    return `https://og.bugblogs.tech/${title}.png?theme=dark&md=1&fontSize=75px&images=https%3A%2F%2Fucarecdn.com%2Fcdc7a226-83a7-434d-95b6-66c93d276c24%2F`;
   };
 
   return (

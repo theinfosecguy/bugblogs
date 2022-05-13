@@ -6,15 +6,9 @@ import ReactMarkdown from "react-markdown";
 import { AiFillTags } from "react-icons/ai";
 import remarkGfm from "remark-gfm";
 import GradientBlock from "../../components/Adblocks/GradientBlock";
-import rehypeRaw from "rehype-raw";
+import { findAuthor } from "../../authors/_helper";
 
 export default function PostPage({ frontmatter, content }) {
-  // const getImageURL = (title, author = "Anonymous") => {
-  //   const apiURL = "https://og.bugblogs.tech/api/image";
-  //   // return `${apiURL}?fileType=png&layoutName=Blog&Theme=Dark&Title=${title}&Author=${author}`;
-  //   return "https://og-image-i3gxbp1u9-not-so-great-team.vercel.app/Hello%20World.png?theme=dark&md=1&fontSize=75px&images=https%3A%2F%2Fucarecdn.com%2Fcdc7a226-83a7-434d-95b6-66c93d276c24%2F";
-  // };
-
   const generateRandomRGBACode = () => {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
@@ -38,7 +32,14 @@ export default function PostPage({ frontmatter, content }) {
         {/* Add Line Break */}
         <br />
         <p className="mt-8 text-gray-500 text-xl">
-          By {frontmatter.Author}
+          By{" "}
+          {frontmatter.AuthorId ? (
+            <a href={`/authors/${frontmatter.AuthorId}`}>
+              {findAuthor(frontmatter.AuthorId).name}
+            </a>
+          ) : (
+            "Anonymous"
+          )}
           {frontmatter.Date && <span> · {frontmatter.Date}</span>}
         </p>
         {splitTags(frontmatter.tags).length > 0 ? (

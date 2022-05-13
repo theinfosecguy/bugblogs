@@ -1,6 +1,5 @@
 import React from "react";
 import "./ads.module.css";
-import Link from "next/link";
 
 const grad = {
   background: "linear-gradient(135deg, #FFCC33 0%, #E233FF 100%)",

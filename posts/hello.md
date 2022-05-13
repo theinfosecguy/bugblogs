@@ -40,7 +40,7 @@ yarn add reactjs-custom-accordion
 
 ## Usage
 
-```jsx
+```
 import React from 'react'
 import { Accordion } from 'reactjs-custom-accordion'
 
@@ -82,7 +82,7 @@ Just a Meme
 
 ## Usage with Props
 
-```jsx
+```
 import React from "react";
 import { Accordion } from "reactjs-custom-accordion";
 import { FaBed } from "react-icons/fa";
