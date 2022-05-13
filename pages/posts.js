@@ -12,27 +12,39 @@ export default function Home({ posts }) {
   };
 
   return (
-    <Layout>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 p-8 md:p-2">
-        {posts.map(({ slug, frontmatter }, index) => (
-          <div
-            key={index}
-            className="border border-gray-700 m-4 rounded-xl shadow-lg overflow-hidden"
-          >
-            <a href={`/post/${slug}`}>
-              <a>
-                <Image
-                  width={650}
-                  height={340}
-                  alt={frontmatter.title}
-                  src={getImageURL(frontmatter?.title, frontmatter?.Author)}
-                />
-              </a>
+    <>
+      <Layout>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 p-8 md:p-2">
+          {posts.map(({ slug, frontmatter }, index) => (
+            <a
+              className="relative block bg-black group mx-4 mb-12 h-[260px] rounded-xl"
+              href={`/post/${slug}`}
+            >
+              <img
+                className="rounded-xl absolute inset-0 object-cover w-full h-full transition-opacity opacity-75  group-hover:opacity-50"
+                src={getImageURL(frontmatter?.title, frontmatter?.Author)}
+                alt=""
+              />
+              <div className="relative p-8">
+                <p className="text-xs font-medium tracking-widest text-pink-500 uppercase">
+                  Author
+                </p>
+
+                <p className="text-lg font-bold text-white">
+                  {frontmatter?.Author}
+                </p>
+
+                {/* <div className="mt-64">
+                  <div className="transition-all transform translate-y-8 opacity-0  group-hover:opacity-100 group-hover:translate-y-0">
+                    <p className="text-sm text-white">{frontmatter?.description}</p>
+                  </div>
+                </div> */}
+              </div>
             </a>
-          </div>
-        ))}
-      </div>
-    </Layout>
+          ))}
+        </div>
+      </Layout>
+    </>
   );
 }
 
