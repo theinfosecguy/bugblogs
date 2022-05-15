@@ -1,6 +1,5 @@
 import fs from "fs";
 import matter from "gray-matter";
-import Link from "next/link";
 
 export default function Home() {
   return (

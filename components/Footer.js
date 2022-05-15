@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { AiFillTwitterCircle, AiFillGithub, AiFillMail } from "react-icons/ai";
 
 function Footer() {
@@ -51,7 +50,7 @@ function Footer() {
 
             <a
               className="hover:opacity-75"
-              href="/sponsor"
+              href="mailto:sponsor@bugblogs.tech&subject=Sponsorship%20Request"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -81,12 +80,12 @@ function Footer() {
             BugBlogs is an Open-Source blog project that aims to help security
             researchers learn, explore and hack. It is maintained by a group of
             developers who are passionate about security. If you have any
-            questions, please contact us at
+            questions, please contact us at{" "}
             <a
               href="mailto:support@bugblogs.tech"
               className="text-white-500 hover:text-opacity-75"
             >
-              our support email address.
+              our support email address.{" "}
             </a>
             <br />
           </p>

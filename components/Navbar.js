@@ -1,6 +1,5 @@
 import React from "react";
 import { AiFillGithub } from "react-icons/ai";
-import Link from "next/link";
 
 function Navbar() {
   return (

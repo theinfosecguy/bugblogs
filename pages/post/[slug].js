@@ -1,30 +1,19 @@
 import fs from "fs";
 import matter from "gray-matter";
 import Layout from "../../components/Layout";
-import Head from "next/head";
 import ReactMarkdown from "react-markdown";
 import { AiFillTags } from "react-icons/ai";
 import remarkGfm from "remark-gfm";
 import GradientBlock from "../../components/Adblocks/GradientBlock";
-import { findAuthor } from "../../authors/_helper";
+import {
+  findAuthor,
+  splitTags,
+  generateRandomRGBACode,
+} from "../../utils/index";
 
 export default function PostPage({ frontmatter, content }) {
-  const generateRandomRGBACode = () => {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    return [`rgba(${r}, ${g}, ${b}, 0.1)`, `rgb(${r}, ${g}, ${b})`];
-  };
-
-  const splitTags = (tags) => {
-    return tags[0].split(",");
-  };
-
   return (
     <Layout>
-      <Head>
-        <title>{frontmatter.title}</title>
-      </Head>
       <div className={proseClass}>
         <span className="text-white font-bold text-jumbo">
           {frontmatter.title}
@@ -78,7 +67,6 @@ export default function PostPage({ frontmatter, content }) {
         >
           {content}
         </ReactMarkdown>
-
         <GradientBlock />
       </div>
     </Layout>

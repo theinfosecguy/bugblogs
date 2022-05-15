@@ -10,24 +10,12 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 import Head from "next/head";
-import Script from "next/script";
+import { validateURL, getImageURL } from "../../utils/index";
 
 function AuthorDetails({ author, filteredPosts }) {
   const grad = {
     backgroundColor: "#861657",
     backgroundImage: "linear-gradient(326deg, #861657 0%, #ffa69e 74%)",
-  };
-
-  const getImageURL = (title) => {
-    return `https://og.bugblogs.tech/${title}.png?theme=dark&md=1&fontSize=75px&images=https%3A%2F%2Fucarecdn.com%2Fcdc7a226-83a7-434d-95b6-66c93d276c24%2F`;
-  };
-
-  const validateURL = (url) => {
-    if (url.startsWith("http") || url.startsWith("https")) {
-      return url;
-    } else {
-      return `https://${url}`;
-    }
   };
 
   return (
