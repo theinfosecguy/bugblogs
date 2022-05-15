@@ -8,7 +8,7 @@ function Authors() {
   return (
     <div className="dark-bg">
       <Navbar />
-      <section className="relative p-12 w-full flex flex-col items-center min-h-screen">
+      <section className="relative w-full flex flex-col items-center min-h-screen xl:p-12 md:p-6">
         {authorsList.length > 0 ? (
           <section>
             <div className="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
