@@ -29,8 +29,6 @@ const SEO = ({ image, author, ...props }) => {
   const canonical = props.canonical;
   const keywords = props.keywords || config.keywords;
 
-  console.log(canonical);
-
   return (
     <>
       <DefaultSeo {...config} />
