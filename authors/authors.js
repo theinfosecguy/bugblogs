@@ -1,16 +1,16 @@
 export const authorsList = [
   {
     id: "1",
-    name: "John Doe",
-    image:
-      "https://avatars2.githubusercontent.com/u/5695907?s=460&u=f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d8&v=4",
+    name: "Keshav Malik",
+    image: "https://avatars.githubusercontent.com/u/33570148?v=4",
     description:
-      "John is a software engineer and a full stack developer. He is currently working on a project called 'Bug Blogs' which is a blogging platform for developers.",
+      "Keshav is a security engineer and a full stack developer. He is constantly on the lookout for new and interesting technologies and enjoys working with a diverse set of technologies in his spare time.",
     social: {
-      github: "github.com/john-doe",
-      twitter: "",
-      linkedin: "",
+      github: "github.com/theinfosecguy",
+      twitter: "https://twitter.com/g0t_rOoT_",
+      linkedin: "https://www.linkedin.com/in/keshav-malik/",
     },
+    buymeacoffeeUsername: "theinfosecguy",
   },
   {
     id: "2",
@@ -24,76 +24,5 @@ export const authorsList = [
       twitter: "twitter.com/john-doe",
       linkedin: "linkedin.com/in/john-doe",
     },
-    buymeacoffeeUsername: "theinfosecguy",
-  },
-  {
-    id: "3",
-    name: "Username",
-    image:
-      "https://avatars2.githubusercontent.com/u/5695907?s=460&u=f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d8&v=4",
-    description:
-      "User is a software engineer and a full stack developer. He is currently working on a project called 'Bug Blogs' which is a blogging platform for developers.",
-    social: {
-      github: "github.com/john-doe",
-      twitter: "twitter.com/john-doe",
-      linkedin: "linkedin.com/in/john-doe",
-    },
-    buymeacoffeeUsername: "theinfosecguy",
-  },
-  {
-    id: "4",
-    name: "Username",
-    image:
-      "https://avatars2.githubusercontent.com/u/5695907?s=460&u=f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d8&v=4",
-    description:
-      "User is a software engineer and a full stack developer. He is currently working on a project called 'Bug Blogs' which is a blogging platform for developers.",
-    social: {
-      github: "github.com/john-doe",
-      twitter: "twitter.com/john-doe",
-      linkedin: "linkedin.com/in/john-doe",
-    },
-    buymeacoffeeUsername: "theinfosecguy",
-  },
-  {
-    id: "5",
-    name: "Username",
-    image:
-      "https://avatars2.githubusercontent.com/u/5695907?s=460&u=f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d8&v=4",
-    description:
-      "User is a software engineer and a full stack developer. He is currently working on a project called 'Bug Blogs' which is a blogging platform for developers.",
-    social: {
-      github: "github.com/john-doe",
-      twitter: "twitter.com/john-doe",
-      linkedin: "linkedin.com/in/john-doe",
-    },
-    buymeacoffeeUsername: "theinfosecguy",
-  },
-  {
-    id: "6",
-    name: "Username",
-    image:
-      "https://avatars2.githubusercontent.com/u/5695907?s=460&u=f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d8&v=4",
-    description:
-      "User is a software engineer and a full stack developer. He is currently working on a project called 'Bug Blogs' which is a blogging platform for developers.",
-    social: {
-      github: "github.com/john-doe",
-      twitter: "twitter.com/john-doe",
-      linkedin: "linkedin.com/in/john-doe",
-    },
-    buymeacoffeeUsername: "theinfosecguy",
-  },
-  {
-    id: "7",
-    name: "Username",
-    image:
-      "https://avatars2.githubusercontent.com/u/5695907?s=460&u=f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d8f9f8b8d8&v=4",
-    description:
-      "User is a software engineer and a full stack developer. He is currently working on a project called 'Bug Blogs' which is a blogging platform for developers.",
-    social: {
-      github: "github.com/john-doe",
-      twitter: "twitter.com/john-doe",
-      linkedin: "linkedin.com/in/john-doe",
-    },
-    buymeacoffeeUsername: "theinfosecguy",
   },
 ];

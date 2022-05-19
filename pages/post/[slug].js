@@ -106,11 +106,9 @@ const proseClass = `prose mx-auto md:text-left mt-12
         prose-table:overflow-hidden prose-table:border-custom-grey prose-table:rounded-lg 
         prose-thead:bg-custom-grey prose-th:text-white prose-th:py-2 prose-th:px-4 
         prose-tr:border-y-0 prose-tr:text-gray-100 prose-td:py-2 prose-td:px-4 
-        prose-blockquote:border prose-blockquote:border-custom-grey prose-blockquote:p-8 
+        prose-blockquote:border prose-blockquote:border-custom-grey prose-blockquote:px-4 
         prose-blockquote:text-xl prose-blockquote:rounded-lg prose-blockquote:leading-10 
         prose-p:text-custom-grey prose-p:leading-loose prose-lead:leading-relaxed 
-        marker:prose-li:text-custom-grey prose-li:text-custom-grey prose-li:font-medium 
-        prose-a:text-indigo-600 prose-a:decoration-wavy prose-a:font-medium 
-        hover:prose-a:text-indigo-600 prose-img:border prose-img:border-custom-grey prose-img:p-4 
-        prose-img:rounded-lg prose-pre:bg-custom-grey prose-pre:text-white 
+        prose-li:text-white prose-a:text-indigo-600 prose-a:decoration-wavy prose-a:font-medium 
+        hover:prose-a:text-indigo-600 prose-pre:bg-custom-grey prose-pre:text-white 
         prose-pre:text-base prose-pre:leading-loose prose-p:text-white prose-p:leading-loose`;

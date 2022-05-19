@@ -11,6 +11,7 @@ import {
 } from "react-icons/ai";
 import Head from "next/head";
 import { validateURL, getImageURL } from "../../utils/index";
+import PostCard from "../../components/Posts/PostCard";
 
 function AuthorDetails({ author, filteredPosts }) {
   const grad = {
@@ -44,7 +45,11 @@ function AuthorDetails({ author, filteredPosts }) {
         ></div>
         <img
           className="author-avatar white-shadow"
-          src={"https://ucarecdn.com/4b2f8425-7082-4b67-acfe-16ecce553f24/"}
+          src={
+            author.image
+              ? author.image
+              : "https://ucarecdn.com/4b2f8425-7082-4b67-acfe-16ecce553f24/"
+          }
           alt=""
         />
         <div className="author-details mt-24 text-center w-full flex flex-col items-center">
@@ -52,7 +57,7 @@ function AuthorDetails({ author, filteredPosts }) {
             👋 Hey! I&apos;m {author?.name || "Unknown"}
           </h1>
           <p className="text-gray-200 text-md mt-12 xl:text-lg lg:text-xl xl:w-3/4 lg:w-[85vw] sm:w-[95vw]">
-            {author.description}
+            {author?.description}
           </p>
           <div className="my-8 flex">
             {author.social.github && (
@@ -87,35 +92,15 @@ function AuthorDetails({ author, filteredPosts }) {
           </div>
         </div>
       </section>
-      <section className="my-12 relative w-full flex flex-col author-posts px-12">
-        <h1 className="text-2xl font-bold text-white text-left">My Posts</h1>
+      <section className="my-12 relative w-full flex flex-col author-posts">
+        <h1 className="text-2xl font-bold text-white text-left px-12">
+          My Posts
+        </h1>
         {filteredPosts.length > 0 ? (
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 p-8 md:p-2">
-            {filteredPosts.map((post, index) => {
-              const { slug, frontmatter } = post;
-              return (
-                <a
-                  className="relative block bg-black group mx-4 mb-12 h-[300px] rounded-xl"
-                  href={`/post/${slug}`}
-                  key={index}
-                >
-                  <img
-                    className="rounded-xl absolute inset-0 object-cover w-full h-full transition-opacity opacity-75  group-hover:opacity-50"
-                    src={getImageURL(frontmatter?.title, frontmatter?.Author)}
-                    alt=""
-                  />
-                  <div className="relative p-8">
-                    <p className="text-xs font-medium tracking-widest text-pink-500 uppercase">
-                      Author
-                    </p>
-
-                    <p className="text-lg font-bold text-white">
-                      {author.name ? author.name : "Anonymous"}
-                    </p>
-                  </div>
-                </a>
-              );
-            })}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:p-2 w-full xl:grid-cols-2">
+            {filteredPosts.map(({ slug, frontmatter }, index) => (
+              <PostCard slug={slug} frontmatter={frontmatter} key={index} />
+            ))}
           </div>
         ) : (
           <p className="text-center w-full text-white text-lg my-12">
