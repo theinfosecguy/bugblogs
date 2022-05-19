@@ -12,6 +12,7 @@ import {
   generateRandomRGBACode,
 } from "../../utils/index";
 import SEO from "../../components/Seo";
+import { ProgressBar } from "../../components/Posts/ProgressBar";
 const Markdoc = require("@markdoc/markdoc");
 
 const mardownParser = (doc) => {
@@ -31,6 +32,7 @@ export default function PostPage({ frontmatter, content, slug }) {
         canonical={`https://bugblogs.tech/${slug}`}
       />
       <div className={proseClass}>
+        <ProgressBar />
         <span className="text-white font-bold text-jumbo">
           {frontmatter.title}
         </span>
