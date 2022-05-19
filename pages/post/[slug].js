@@ -1,4 +1,5 @@
 import fs from "fs";
+import React from "react";
 import matter from "gray-matter";
 import Layout from "../../components/Layout";
 import ReactMarkdown from "react-markdown";
@@ -10,6 +11,13 @@ import {
   splitTags,
   generateRandomRGBACode,
 } from "../../utils/index";
+const Markdoc = require("@markdoc/markdoc");
+
+const mardownParser = (doc) => {
+  const ast = Markdoc.parse(doc);
+  const contentw = Markdoc.transform(ast);
+  return Markdoc.renderers.react(contentw, React);
+};
 
 export default function PostPage({ frontmatter, content }) {
   return (
@@ -53,20 +61,7 @@ export default function PostPage({ frontmatter, content }) {
             })}
           </p>
         ) : null}
-        <ReactMarkdown
-          components={{
-            code: ({ node, ...props }) => (
-              <code
-                style={{ color: "white" }}
-                {...props}
-                className="language-const"
-              />
-            ),
-          }}
-          remarkPlugins={[remarkGfm]}
-        >
-          {content}
-        </ReactMarkdown>
+        {mardownParser(content)}
         <GradientBlock />
       </div>
     </Layout>
