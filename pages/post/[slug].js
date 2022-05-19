@@ -11,6 +11,7 @@ import {
   splitTags,
   generateRandomRGBACode,
 } from "../../utils/index";
+import SEO from "../../components/Seo";
 const Markdoc = require("@markdoc/markdoc");
 
 const mardownParser = (doc) => {
@@ -22,6 +23,12 @@ const mardownParser = (doc) => {
 export default function PostPage({ frontmatter, content }) {
   return (
     <Layout>
+      <SEO
+        title={frontmatter.title}
+        description={frontmatter.description}
+        author={findAuthor(frontmatter.AuthorId).name ?? "BugBlogs"}
+        image={frontmatter.image}
+      />
       <div className={proseClass}>
         <span className="text-white font-bold text-jumbo">
           {frontmatter.title}
