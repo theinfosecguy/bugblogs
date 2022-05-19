@@ -12,6 +12,7 @@ import {
 import Head from "next/head";
 import { validateURL, getImageURL } from "../../utils/index";
 import PostCard from "../../components/Posts/PostCard";
+import SEO from "../../components/Seo";
 
 function AuthorDetails({ author, filteredPosts }) {
   const grad = {
@@ -21,6 +22,11 @@ function AuthorDetails({ author, filteredPosts }) {
 
   return (
     <div className="dark-bg">
+      <SEO
+        title={`Hi! I am ${author.name}`}
+        description={author.bio ?? ""}
+        canonical={`https://bugblogs.tech/authors/${author.id}`}
+      />
       <Head>
         {author.buymeacoffeeUsername && (
           <script
@@ -50,7 +56,7 @@ function AuthorDetails({ author, filteredPosts }) {
               ? author.image
               : "https://ucarecdn.com/4b2f8425-7082-4b67-acfe-16ecce553f24/"
           }
-          alt=""
+          alt="Author Avatar"
         />
         <div className="author-details mt-24 text-center w-full flex flex-col items-center">
           <h1 className="text-4xl font-bold text-white">

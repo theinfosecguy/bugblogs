@@ -6,10 +6,12 @@ export const url = "https://bugblogs.tech";
 const description =
   "BugBlogs is an Open-Source blog project that aims to help security researchers learn, explore and hack. It is maintained by a group of developers who are passionate about security.";
 const image = "https://bugblogs.tech/og.png";
+const keywords = "bugblogs, blog, security, open-source";
 
 const config = {
   title,
   description,
+  keywords,
   openGraph: {
     type: "website",
     url,
@@ -24,6 +26,10 @@ const config = {
 const SEO = ({ image, author, ...props }) => {
   const title = props.title ?? config.title;
   const description = props.description || config.description;
+  const canonical = props.canonical;
+  const keywords = props.keywords || config.keywords;
+
+  console.log(canonical);
 
   return (
     <>
@@ -33,7 +39,8 @@ const SEO = ({ image, author, ...props }) => {
         {...props}
         {...(image == null
           ? {}
-          : {
+          : /* eslint-disable indent */
+            {
               openGraph: {
                 images: [{ url: image }],
                 article: {
@@ -45,8 +52,9 @@ const SEO = ({ image, author, ...props }) => {
 
       <Head>
         <title>{title}</title>
-
         <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        {canonical && <link rel="canonical" href={canonical} />}
       </Head>
     </>
   );

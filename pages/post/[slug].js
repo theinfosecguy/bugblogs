@@ -20,7 +20,7 @@ const mardownParser = (doc) => {
   return Markdoc.renderers.react(contentw, React);
 };
 
-export default function PostPage({ frontmatter, content }) {
+export default function PostPage({ frontmatter, content, slug }) {
   return (
     <Layout>
       <SEO
@@ -28,6 +28,7 @@ export default function PostPage({ frontmatter, content }) {
         description={frontmatter.description}
         author={findAuthor(frontmatter.AuthorId).name ?? "BugBlogs"}
         image={frontmatter.image}
+        canonical={`https://bugblogs.tech/${slug}`}
       />
       <div className={proseClass}>
         <span className="text-white font-bold text-jumbo">
@@ -78,11 +79,13 @@ export default function PostPage({ frontmatter, content }) {
 export async function getStaticProps({ params }) {
   const fileName = `posts/${params.slug}.md`;
   const readFile = fs.readFileSync(fileName, "utf-8");
+  const slug = params.slug;
   const { data: frontmatter, content } = matter(readFile);
   return {
     props: {
       frontmatter,
       content,
+      slug,
     },
   };
 }
