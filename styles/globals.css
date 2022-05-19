@@ -48,3 +48,17 @@
       *))::before {
   content: "";
 }
+
+.prose :where(code):not(:where([class~="not-prose"] *)) {
+  color: white;
+  font-weight: normal;
+  font-size: 0.875em;
+  background-color: var(--tw-prose-pre-bg);
+  padding: 5px 7px;
+  border-radius: 5px;
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *))::before,
+.prose :where(code):not(:where([class~="not-prose"] *))::after {
+  content: "";
+}

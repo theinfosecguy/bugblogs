@@ -45,7 +45,11 @@ You must have encountered a Google CAPTCHA while testing Website. These are some
 
 Adding Null Byte ( %00 ) at the end of the Email can sometimes Bypass Rate Limit.
 Try adding a Space Character after a Email. ( Not Encoded )
-Some Common Characters that help bypassing Rate Limit : %0d , %2e , %09 , %20
+Some Common Characters that help bypassing Rate Limit : `%0d` , %2e , %09 , %20
+
+```
+Multi Line Code
+```
 
 
 I know there would be many more ways to Bypass Rate Limits, Please feel free to share them.
