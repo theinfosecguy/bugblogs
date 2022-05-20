@@ -44,7 +44,9 @@ export default function PostPage({ frontmatter, content, slug }) {
               href={`/authors/${frontmatter.AuthorId}`}
               style={{ color: "pink" }}
             >
-              {findAuthor(frontmatter.AuthorId).name}
+              {findAuthor(frontmatter.AuthorId)
+                ? findAuthor(frontmatter.AuthorId).name
+                : "Anonymous"}
             </a>
           ) : (
             "Anonymous"
