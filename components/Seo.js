@@ -5,7 +5,7 @@ const title = "Bug Blogs: Open Source Blogs for Security Enthusiasts";
 export const url = "https://bugblogs.tech";
 const description =
   "BugBlogs is an Open-Source blog project that aims to help security researchers learn, explore and hack. It is maintained by a group of developers who are passionate about security.";
-const image = "https://bugblogs.tech/og.png";
+const image = "https://ucarecdn.com/60610dae-bb99-4368-b549-2181f25603a6/";
 const keywords = "bugblogs, blog, security, open-source";
 
 const config = {
