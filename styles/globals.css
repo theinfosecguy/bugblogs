@@ -62,3 +62,47 @@
 .prose :where(code):not(:where([class~="not-prose"] *))::after {
   content: "";
 }
+
+.prose :where(code):not(:where([class~="not-prose"] *)) {
+  font-family: "Source Code Pro", monospace;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
+.prose p,
+.prose li {
+  font-family: -apple-system, BlinkMacSystemFont, Inter, Roboto, "Segoe UI",
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 18px;
+}
+
+.prose h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.prose h2 {
+  font-size: 1.7rem;
+  line-height: 1.2;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.prose-blockquote\:leading-10
+  :is(:where(blockquote):not(:where([class~="not-prose"] *))) {
+  line-height: 2.5rem;
+  width: 100vw;
+  max-width: 100%;
+  line-break: anywhere;
+}
+
+.prose :where(ul > li):not(:where([class~="not-prose"] *))::marker {
+  font-size: 20px;
+}
