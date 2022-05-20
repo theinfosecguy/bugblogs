@@ -1,42 +1,56 @@
 import fs from "fs";
+import React from "react";
 import matter from "gray-matter";
 import Layout from "../../components/Layout";
-import Head from "next/head";
 import ReactMarkdown from "react-markdown";
 import { AiFillTags } from "react-icons/ai";
 import remarkGfm from "remark-gfm";
+import GradientBlock from "../../components/Adblocks/GradientBlock";
+import {
+  findAuthor,
+  splitTags,
+  generateRandomRGBACode,
+} from "../../utils/index";
+import SEO from "../../components/Seo";
+import { ProgressBar } from "../../components/Posts/ProgressBar";
+const Markdoc = require("@markdoc/markdoc");
 
-export default function PostPage({ frontmatter, content }) {
-  // const getImageURL = (title, author = "Anonymous") => {
-  //   const apiURL = "https://og.bugblogs.tech/api/image";
-  //   // return `${apiURL}?fileType=png&layoutName=Blog&Theme=Dark&Title=${title}&Author=${author}`;
-  //   return "https://og-image-i3gxbp1u9-not-so-great-team.vercel.app/Hello%20World.png?theme=dark&md=1&fontSize=75px&images=https%3A%2F%2Fucarecdn.com%2Fcdc7a226-83a7-434d-95b6-66c93d276c24%2F";
-  // };
+const mardownParser = (doc) => {
+  const ast = Markdoc.parse(doc);
+  const contentw = Markdoc.transform(ast);
+  return Markdoc.renderers.react(contentw, React);
+};
 
-  const generateRandomRGBACode = () => {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    return [`rgba(${r}, ${g}, ${b}, 0.1)`, `rgb(${r}, ${g}, ${b})`];
-  };
-
-  const splitTags = (tags) => {
-    return tags[0].split(",");
-  };
-
+export default function PostPage({ frontmatter, content, slug }) {
   return (
     <Layout>
-      <Head>
-        <title>{frontmatter.title}</title>
-      </Head>
+      <SEO
+        title={frontmatter.title}
+        description={frontmatter.description}
+        author={findAuthor(frontmatter.AuthorId).name ?? "BugBlogs"}
+        image={frontmatter.image}
+        canonical={`https://bugblogs.tech/${slug}`}
+      />
       <div className={proseClass}>
+        <ProgressBar />
         <span className="text-white font-bold text-jumbo">
           {frontmatter.title}
         </span>
-        {/* Add Line Break */}
         <br />
         <p className="mt-8 text-gray-500 text-xl">
-          By {frontmatter.Author}
+          By{" "}
+          {frontmatter.AuthorId ? (
+            <a
+              href={`/authors/${frontmatter.AuthorId}`}
+              style={{ color: "pink" }}
+            >
+              {findAuthor(frontmatter.AuthorId)
+                ? findAuthor(frontmatter.AuthorId).name
+                : "Anonymous"}
+            </a>
+          ) : (
+            "Anonymous"
+          )}
           {frontmatter.Date && <span> · {frontmatter.Date}</span>}
         </p>
         {splitTags(frontmatter.tags).length > 0 ? (
@@ -59,40 +73,23 @@ export default function PostPage({ frontmatter, content }) {
             })}
           </p>
         ) : null}
-        <ReactMarkdown
-          components={{
-            code: ({ node, ...props }) => (
-              console.log(node),
-              (
-                <code
-                  style={{ color: "white" }}
-                  {...props}
-                  className="language-const"
-                />
-              )
-            ),
-          }}
-          remarkPlugins={[remarkGfm]}
-        >
-          {content}
-        </ReactMarkdown>
+        {mardownParser(content)}
+        <GradientBlock />
       </div>
     </Layout>
   );
 }
 
-// const CodeBlock = ({ value }) => {
-//   return <p>{value}</p>;
-// };
-
 export async function getStaticProps({ params }) {
   const fileName = `posts/${params.slug}.md`;
   const readFile = fs.readFileSync(fileName, "utf-8");
+  const slug = params.slug;
   const { data: frontmatter, content } = matter(readFile);
   return {
     props: {
       frontmatter,
       content,
+      slug,
     },
   };
 }
@@ -118,11 +115,9 @@ const proseClass = `prose mx-auto md:text-left mt-12
         prose-table:overflow-hidden prose-table:border-custom-grey prose-table:rounded-lg 
         prose-thead:bg-custom-grey prose-th:text-white prose-th:py-2 prose-th:px-4 
         prose-tr:border-y-0 prose-tr:text-gray-100 prose-td:py-2 prose-td:px-4 
-        prose-blockquote:border prose-blockquote:border-custom-grey prose-blockquote:p-8 
+        prose-blockquote:border prose-blockquote:border-custom-grey prose-blockquote:px-4 
         prose-blockquote:text-xl prose-blockquote:rounded-lg prose-blockquote:leading-10 
         prose-p:text-custom-grey prose-p:leading-loose prose-lead:leading-relaxed 
-        marker:prose-li:text-custom-grey prose-li:text-custom-grey prose-li:font-medium 
-        prose-a:text-indigo-600 prose-a:decoration-wavy prose-a:font-medium 
-        hover:prose-a:text-indigo-600 prose-img:border prose-img:border-custom-grey prose-img:p-4 
-        prose-img:rounded-lg prose-pre:bg-custom-grey prose-pre:text-white 
+        prose-li:text-white prose-a:text-indigo-600 prose-a:decoration-wavy prose-a:font-medium 
+        hover:prose-a:text-indigo-600 prose-pre:bg-custom-grey prose-pre:text-white 
         prose-pre:text-base prose-pre:leading-loose prose-p:text-white prose-p:leading-loose`;

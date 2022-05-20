@@ -1,12 +1,11 @@
 import fs from "fs";
 import matter from "gray-matter";
-import Link from "next/link";
 
 export default function Home() {
   return (
     <>
       <section className="min-h-screen text-white dark-bg">
-        <div className="max-w-screen-xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex">
+        <div className="max-w-screen-xl px-4 py-32 mx-auto lg:h-screen lg:items-center flex min-h-screen items-center justify-center">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-3xl font-extrabold sm:text-5xl bg-clip-text text-white">
               Learn, <span className="grad-text">Explore</span> & Hack
@@ -15,7 +14,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="font-lalezar max-w-xl mx-auto mt-4 sm:leading-relaxed sm:text-xl">
+            <p className="max-w-xl mx-auto mt-8 sm:leading-relaxed xl:text-lg md:text-xs">
               BugBlogs is a open source project that aims to help security
               researchers learn, explore and hack.
             </p>
