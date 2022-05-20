@@ -43,3 +43,5 @@ yarn dev
 ```
 
 ## License
+
+[MIT](https://github.com/theinfosecguy/bugblogs/blob/main/LICENSE)
