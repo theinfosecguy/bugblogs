@@ -26,7 +26,7 @@ export default function PostPage({ frontmatter, content, slug }) {
     <Layout>
       <SEO
         title={frontmatter.title}
-        description={frontmatter.description}
+        description={content.substring(0, 150)}
         author={findAuthor(frontmatter.AuthorId).name ?? "BugBlogs"}
         image={frontmatter.image}
         canonical={`https://bugblogs.tech/${slug}`}
