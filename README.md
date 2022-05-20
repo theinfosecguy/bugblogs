@@ -21,6 +21,8 @@ For contributing to BugBlogs as an author, follow the below mentioned steps:
 4. If you are writing for the very first time, add your details in the `authors.js` file in `/authors` directory.
 5. Once done, create a pull request and wait for someone to approve it!
 
+Not sure what to write? Look for issue with `looking for author` tab! 💯
+
 
 ## Usage (Local Setup)
 
