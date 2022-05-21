@@ -37,7 +37,7 @@ export default function PostPage({ frontmatter, content, slug }) {
       />
       <div className={proseClass}>
         <ProgressBar />
-        <span className="text-white font-bold text-jumbo">
+        <span className="text-white font-bold xl:text-3xl lg:text-2xl md:text-2xl sm:text-2xl text-2xl">
           {frontmatter.title}
         </span>
         <br />
