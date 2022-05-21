@@ -1,8 +1,6 @@
 import fs from "fs";
 
-const Sitemap = () => {};
-
-export const getServerSideProps = ({ res }) => {
+export const sitemapGenerator = ({ res }) => {
   const baseUrl = "https://www.bugblogs.tech";
 
   const staticPages = fs.readdirSync("posts").map((staticPagePath) => {
