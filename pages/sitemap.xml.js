@@ -3,10 +3,7 @@ import fs from "fs";
 const Sitemap = () => {};
 
 export const getServerSideProps = ({ res }) => {
-  const baseUrl = {
-    development: "http://localhost:3000",
-    production: "https://www.bugblogs.tech",
-  }[process.env.NODE_ENV];
+  const baseUrl = "https://www.bugblogs.tech";
 
   const staticPages = fs.readdirSync("posts").map((staticPagePath) => {
     const path = staticPagePath.replace(".md", "");

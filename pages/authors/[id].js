@@ -25,7 +25,7 @@ function AuthorDetails({ author, filteredPosts }) {
       <SEO
         title={`Hi! I am ${author.name}`}
         description={author.bio ?? ""}
-        canonical={`https://bugblogs.tech/authors/${author.id}`}
+        canonical={`https://www.bugblogs.tech/authors/${author.id}`}
       />
       <Head>
         {author.buymeacoffeeUsername && (

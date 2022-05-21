@@ -10,6 +10,7 @@ import {
   findAuthor,
   splitTags,
   generateRandomRGBACode,
+  getImageURL,
 } from "../../utils/index";
 import SEO from "../../components/Seo";
 import { ProgressBar } from "../../components/Posts/ProgressBar";
@@ -28,8 +29,11 @@ export default function PostPage({ frontmatter, content, slug }) {
         title={frontmatter.title}
         description={content.substring(0, 150)}
         author={findAuthor(frontmatter.AuthorId).name ?? "BugBlogs"}
-        image={frontmatter.image}
-        canonical={`https://bugblogs.tech/${slug}`}
+        canonical={`https://www.bugblogs.tech/${slug}`}
+        image={getImageURL(
+          frontmatter?.title ?? "Anonymous",
+          frontmatter?.Author
+        )}
       />
       <div className={proseClass}>
         <ProgressBar />
