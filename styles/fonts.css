@@ -63,6 +63,7 @@
 .prose p {
   font-size: 16px;
   line-height: 2;
+  line-break: anywhere;
 }
 
 .prose {
