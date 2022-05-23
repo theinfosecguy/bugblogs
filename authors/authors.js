@@ -26,3 +26,17 @@ export const authorsList = [
     buymeacoffeeUsername: "ranjan2255",
   },
 ];
+  {
+    id: "3",
+    name: "Nithissh",
+    image: "https://avatars.githubusercontent.com/u/93642429?v=4",
+    description:
+      "Bug Bounty Hunter • 22 • Computer Science Student • Security Engineer at Tata Elxsi",
+    social: {
+      github: "github.com/nithissh200",
+      twitter: "https://twitter.com/punkie1337",
+      linkedin: "https://www.linkedin.com/in/nithissh-sathish-aa0561208",
+    },
+    buymeacoffeeUsername: "Nithissh",
+  },
+];
