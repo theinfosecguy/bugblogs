@@ -134,3 +134,10 @@ p codeblock {
   padding-left: 1.1428571em;
   font-family: monospace;
 }
+
+.prose :where(strong):not(:where([class~="not-prose"] *)) {
+  color: white;
+  font-weight: 600;
+  width: 100%;
+  line-break: anywhere;
+}
