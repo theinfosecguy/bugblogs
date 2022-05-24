@@ -25,8 +25,7 @@ export const authorsList = [
     },
     buymeacoffeeUsername: "ranjan2255",
   },
-];
-  {
+    {
     id: "3",
     name: "Nithissh",
     image: "https://avatars.githubusercontent.com/u/93642429?v=4",
@@ -39,4 +38,5 @@ export const authorsList = [
     },
     buymeacoffeeUsername: "Nithissh",
   },
+];
 ];
